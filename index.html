@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#06080d" />
+  <meta name="description" content="The SVRN Management Solutions LLC — strategy, clarity, and growth-focused management solutions." />
+  <meta property="og:title" content="The SVRN Management Solutions LLC" />
+  <meta property="og:description" content="Purpose-driven management solutions, strategic guidance, and insight for sustainable growth." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/svrn-logo.png" />
+  <title>The SVRN Management Solutions LLC</title>
+  <link rel="icon" href="/assets/svrn-logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #05070b;
+      --bg-soft: #090d14;
+      --panel: rgba(15, 21, 31, 0.72);
+      --panel-2: rgba(10, 15, 23, 0.82);
+      --text: #f5f1e8;
+      --muted: #a8afbc;
+      --navy: #143765;
+      --blue: #1a4a86;
+      --gold: #c8a24d;
+      --gold-bright: #e0be68;
+      --line: rgba(200,162,77,.28);
+      --shadow: 0 30px 90px rgba(0,0,0,.5);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 18% -5%, rgba(25,64,116,.28), transparent 32%),
+        radial-gradient(circle at 94% 18%, rgba(200,162,77,.11), transparent 24%),
+        linear-gradient(180deg, #05070b 0%, #070a0f 50%, #05070b 100%);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .16;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, #000, transparent 78%);
+    }
+
+    a { color: inherit; }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      height: 82px;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .domain {
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #d7d9df;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a {
+      font-size: 11px;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      color: #b5bcc7;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+    .nav-links a:hover { color: var(--gold-bright); }
+
+    .hero {
+      position: relative;
+      min-height: 96vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      isolation: isolate;
+      padding: 120px 0 78px;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 720px;
+      height: 720px;
+      border: 1px solid rgba(200,162,77,.09);
+      border-radius: 50%;
+      z-index: -1;
+      box-shadow:
+        0 0 0 78px rgba(20,55,101,.035),
+        0 0 0 154px rgba(200,162,77,.018);
+    }
+    .hero-content { width: min(820px, 100%); }
+    .logo {
+      width: min(420px, 72vw);
+      height: auto;
+      display: block;
+      margin: 0 auto 18px;
+      filter: drop-shadow(0 24px 45px rgba(0,0,0,.45));
+    }
+    .eyebrow {
+      margin: 10px 0 16px;
+      color: var(--gold-bright);
+      font-size: 11px;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: .98;
+      font-weight: 600;
+      margin: 0 auto;
+      max-width: 850px;
+      letter-spacing: -.02em;
+    }
+    .hero h1 em { color: var(--gold-bright); font-style: normal; }
+    .hero-copy {
+      max-width: 690px;
+      margin: 24px auto 0;
+      color: #b7bec9;
+      line-height: 1.75;
+      font-size: 15px;
+    }
+    .hero-actions {
+      margin-top: 34px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 28px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .btn-primary {
+      color: #0c1017;
+      background: linear-gradient(135deg, #e2c06e 0%, #b98d34 100%);
+      box-shadow: 0 12px 36px rgba(200,162,77,.18);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 18px 45px rgba(200,162,77,.28); }
+    .btn-ghost { border: 1px solid rgba(200,162,77,.34); color: #ece5d6; background: rgba(255,255,255,.018); }
+    .btn-ghost:hover { border-color: rgba(224,190,104,.7); transform: translateY(-2px); }
+    .micro {
+      margin-top: 24px;
+      color: #7f8795;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .24em;
+    }
+
+    .section { padding: 104px 0; position: relative; }
+    .section + .section { border-top: 1px solid rgba(255,255,255,.055); }
+    .section-kicker {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      color: var(--gold-bright);
+      text-transform: uppercase;
+      letter-spacing: .28em;
+      font-size: 10px;
+      margin-bottom: 28px;
+    }
+    .section-kicker::before, .section-kicker::after {
+      content: "";
+      width: 56px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold));
+      opacity: .65;
+    }
+    .section-kicker::after { background: linear-gradient(90deg, var(--gold), transparent); }
+
+    .about-card {
+      position: relative;
+      max-width: 980px;
+      margin: 0 auto;
+      padding: clamp(34px, 6vw, 72px);
+      border: 1px solid rgba(200,162,77,.15);
+      border-radius: 28px;
+      background:
+        linear-gradient(145deg, rgba(18,27,41,.86), rgba(6,9,14,.88)),
+        radial-gradient(circle at 80% 15%, rgba(200,162,77,.12), transparent 35%);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .about-card::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border: 1px solid rgba(200,162,77,.09);
+      border-radius: 50%;
+      right: -140px;
+      top: -150px;
+    }
+    .about-card h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(40px, 5vw, 62px);
+      line-height: 1.04;
+      text-align: center;
+      font-weight: 600;
+      margin: 0 0 26px;
+    }
+    .about-card h2 span { color: var(--gold-bright); }
+    .about-card > p {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      color: #c0c5ce;
+      line-height: 1.85;
+      font-size: 15px;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 54px;
+      border: 1px solid rgba(255,255,255,.07);
+      background: rgba(255,255,255,.065);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .pillar {
+      background: rgba(5,8,13,.88);
+      padding: 32px 28px 34px;
+      text-align: center;
+      min-height: 220px;
+    }
+    .icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 18px;
+      border: 1px solid rgba(200,162,77,.38);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold-bright);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 22px;
+    }
+    .pillar h3 {
+      margin: 0 0 12px;
+      font-size: 11px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #f0e6cf;
+    }
+    .pillar p { margin: 0; color: #8f97a4; line-height: 1.7; font-size: 13px; }
+
+    .substack {
+      text-align: center;
+      padding: 92px 0 100px;
+    }
+    .substack-box {
+      width: min(850px, 100%);
+      margin: 0 auto;
+      padding: 56px 34px;
+      border-radius: 26px;
+      border: 1px solid rgba(200,162,77,.18);
+      background: linear-gradient(135deg, rgba(13,29,50,.74), rgba(8,10,14,.9));
+    }
+    .substack h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(38px, 5vw, 56px);
+      margin: 0 0 12px;
+      font-weight: 600;
+    }
+    .substack p { color: var(--muted); max-width: 620px; margin: 0 auto 28px; line-height: 1.75; font-size: 14px; }
+
+    .contact {
+      text-align: center;
+      padding: 64px 0 36px;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .contact h3 {
+      margin: 0 0 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .24em;
+      color: #ddd4c1;
+    }
+    .contact p { margin: 0; color: #777f8c; font-size: 13px; }
+    .contact-placeholder {
+      display: inline-flex;
+      margin-top: 20px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 999px;
+      color: #7f8792;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      cursor: default;
+    }
+
+    footer {
+      padding: 24px 0 30px;
+      color: #606876;
+      border-top: 1px solid rgba(255,255,255,.045);
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 18px; align-items: center; flex-wrap: wrap; }
+    .footer-domain { color: #898f99; }
+
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 28px, 1160px); }
+      .nav { height: 68px; }
+      .nav-links { gap: 16px; }
+      .nav-links a:nth-child(2) { display: none; }
+      .domain { font-size: 9px; }
+      .hero { min-height: 92vh; padding-top: 102px; }
+      .hero::after { width: 520px; height: 520px; }
+      .logo { width: min(330px, 84vw); }
+      .hero-copy { font-size: 14px; }
+      .section { padding: 72px 0; }
+      .about-card { border-radius: 22px; padding: 40px 22px; }
+      .pillars { grid-template-columns: 1fr; }
+      .pillar { min-height: 0; }
+      .substack { padding: 66px 0 72px; }
+      .substack-box { padding: 42px 22px; }
+      .footer-inner { justify-content: center; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .btn { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="domain" href="#top">thesvrncode.com</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#insights">Insights</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-content">
+        <img class="logo" src="assets/svrn-logo.png" alt="The SVRN Management Solutions LLC" />
+        <div class="eyebrow">Strategy • Clarity • Growth</div>
+        <h1>Purpose-driven solutions for <em>measurable growth.</em></h1>
+        <p class="hero-copy">Practical management solutions, strategic guidance, and clear thinking for organizations and individuals ready to move forward with purpose.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://svrncode.substack.com/" target="_blank" rel="noopener noreferrer">Read the Substack&nbsp; →</a>
+          <a class="btn btn-ghost" href="#about">About SVRN</a>
+        </div>
+        <div class="micro">People • Strategy • Progress</div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-kicker reveal">About Us</div>
+        <div class="about-card reveal">
+          <h2>Strategy that turns ideas into <span>forward motion.</span></h2>
+          <p>The SVRN Management Solutions LLC provides practical management solutions, strategic guidance, and insight-driven support to help organizations and individuals operate with greater clarity, efficiency, and purpose. We focus on solving real challenges, strengthening systems, and creating sustainable progress where thoughtful strategy meets disciplined execution.</p>
+
+          <div class="pillars">
+            <article class="pillar">
+              <div class="icon">◎</div>
+              <h3>Strategy</h3>
+              <p>Turn vision into focused, actionable plans built around clear priorities and real-world execution.</p>
+            </article>
+            <article class="pillar">
+              <div class="icon">▥</div>
+              <h3>Management Solutions</h3>
+              <p>Build stronger systems, sharpen decision-making, and improve the way work gets done.</p>
+            </article>
+            <article class="pillar">
+              <div class="icon">↗</div>
+              <h3>Growth</h3>
+              <p>Create lasting progress through insight, accountability, and intentional next steps.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="substack section" id="insights">
+      <div class="wrap">
+        <div class="substack-box reveal">
+          <div class="section-kicker">The SVRN Code</div>
+          <h2>Ideas worth building on.</h2>
+          <p>Read the latest thinking, perspective, and strategic insights from The SVRN on Substack.</p>
+          <a class="btn btn-primary" href="https://svrncode.substack.com/" target="_blank" rel="noopener noreferrer">Visit the Substack&nbsp; →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap reveal">
+        <h3>Contact Us</h3>
+        <p>Contact details will be added here.</p>
+        <span class="contact-placeholder" aria-disabled="true">Get in Touch — Coming Soon</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> The SVRN Management Solutions LLC</span>
+      <span class="footer-domain">thesvrncode.com</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const items = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.13 });
+      items.forEach((item) => observer.observe(item));
+    } else {
+      items.forEach((item) => item.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>
